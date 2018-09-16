@@ -1,6 +1,7 @@
 body {
-    background-color: white;
+    background-color: #f8f9fa;
     font-family: $font-family;
+    font-weight: 300;
 }
 
 .animated {
@@ -21,5 +22,6 @@ body {
  }
 
  .navbar {
-     border-bottom: 4px solid dodgerblue; 
+     border-bottom: 4px solid $reddit-primary; 
+     background: #fff;
  }

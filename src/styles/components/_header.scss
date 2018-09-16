@@ -1,6 +1,6 @@
 .menu.selected {
-    color: tomato;
+    color: $reddit-primary;
     font-weight: bolder;
-    border-bottom: 2px solid tomato;
+    border-bottom: 2px solid $reddit-primary;
     text-decoration: none;
 }

@@ -1,3 +1,97 @@
-.post-thumbnail{
-    width: 200px;
+.post-image {
+    max-height: 400px;
+    display: block;
+    margin: 10px auto;
+}
+
+.item-card {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 2px 2px 11px 0px rgba(174, 166, 166, 0.7);
+    display: block;
+    transition: box-shadow 250ms ease;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.post-time{
+    font-size: 13px;
+    color: #9e9e9e;
+    display: block;
+}
+
+.item-card:hover {
+    transition: box-shadow 250ms ease;
+    box-shadow: 4px 4px 7px 0px rgba(174, 166, 166, 0.7);
+}
+
+.post-title {
+    vertical-align: top;
+    text-decoration: none;
+    color: #37474f;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+.post-info {
+    padding: 5px 10px;
+    margin-left: 10px;
+    border: 1px solid #dfdadf;
+    border-radius: 3px;
+    color: #9e9e9e;;
+    font-size: 13px;
+    display: inline-block;
+    i {
+        margin-right: 5px;
+    }
+}
+
+.post-navigate {
+    position: fixed;
+    top: 50%;
+    width: 70px;
+    height: 200px;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    cursor: pointer;
+    transform: translateY(-50%);
+    &.previous-btn {
+        left: 20px;
+    }
+
+    &.next-btn {
+        right: 20px
+    }
+}
+
+.cheveron {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-style: dashed;
+    border-color: rgba(158, 158, 158, 0.6);
+    transition: all 300ms ease;
+    &.left-chev{
+        border-width: 4px 0 0 4px;
+        transform: rotate(-45deg);
+    }
+    &.right-chev{
+        border-width: 4px 4px 0 0;
+        transform: rotate(45deg);
+    }
+}
+
+.post-navigate:hover {
+    .cheveron{
+        border-style: solid;
+        transition: all 300ms ease;
+        border-color: #9e9e9e;
+    }
 }

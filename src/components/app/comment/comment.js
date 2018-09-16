@@ -21,11 +21,8 @@ class CommentsPage extends Component {
                 <PostItem post={comments.comments[0]} />
                 {isFetching ? (
                     <p>Loading</p>
-                ) : (
-                    comments.comments[1].data.children.map((item, index) => (
-                        <CommentItem key={index} data={item} />
-                    ))
-                )}
+                ) : <CommentItem data={comments.comments[1]} />
+                }
             </div>
         );
     }
