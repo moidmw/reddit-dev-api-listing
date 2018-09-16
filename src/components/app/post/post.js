@@ -4,24 +4,32 @@ import { connect } from 'react-redux';
 import { fetchPost } from '../../state/actions/postActions';
 import { fetchComment } from '../../state/actions/commentActions';
 import PostItem from './postItem';
-import {LoadingIndicator} from '../../shared/LoadingIndicator/LoadingIndicator';
+import { LoadingIndicator } from '../../shared/LoadingIndicator/LoadingIndicator';
 
 let limit = 10;
-let postType = 'hot';
 
 class PostPage extends Component {
     componentDidMount = () => {
         const { dispatch } = this.props;
-        dispatch(fetchPost(postType, limit));
+        const { params } = this.props.match;
+        dispatch(fetchPost(params.type, limit));
     };
 
     componentWillReceiveProps = props => {
-        console.log('props received', props, this.props);
+        const { dispatch } = this.props;
+
+        if (props.match.url !== this.props.match.url) {
+            console.log('props.match.params.type', props.match.params.type);
+            dispatch(fetchPost(props.match.params.type, limit));
+        }
     };
 
     fetchMorePost = type => {
         const { dispatch, redditDev } = this.props;
-        dispatch(fetchPost(postType, limit, redditDev.posts.data.after, type));
+        const { params } = this.props.match;
+        dispatch(
+            fetchPost(params.type, limit, redditDev.posts.data.after, type)
+        );
     };
 
     fetchItemComment = link => {
@@ -33,11 +41,16 @@ class PostPage extends Component {
         let { redditDev } = this.props;
         let { isFetching } = redditDev;
         let postArr = redditDev.posts.data;
-        console.log('postarr', isFetching, postArr);
         return (
             <div className="container">
-                {isFetching ? (
-                    <LoadingIndicator/>
+                {isFetching && !redditDev.error ? (
+                    <LoadingIndicator />
+                ) : !isFetching && redditDev.error ? (
+                    <div
+                        className="alert alert-danger text-center mt-3"
+                        role="alert">
+                        {redditDev.error}
+                    </div>
                 ) : (
                     postArr.children.map((item, index) => (
                         <PostItem
@@ -47,10 +60,20 @@ class PostPage extends Component {
                         />
                     ))
                 )}
-                <div title="Previous" onClick={this.fetchMorePost.bind(this, 'before')} className="previous-btn post-navigate">
-                    <span className="left-chev cheveron"></span>
+                <div style={{display: (isFetching || redditDev.error) ? 'none': 'block'}}>
+                    <div
+                        title="Previous"
+                        onClick={this.fetchMorePost.bind(this, 'before')}
+                        className="previous-btn post-navigate">
+                        <span className="left-chev cheveron" />
+                    </div>
+                    <div
+                        title="Next"
+                        onClick={this.fetchMorePost.bind(this, 'after')}
+                        className="next-btn post-navigate">
+                        <span className="right-chev cheveron" />
+                    </div>
                 </div>
-                <div title="Next" onClick={this.fetchMorePost.bind(this, 'after')} className="next-btn post-navigate"><span className="right-chev cheveron"></span></div>
             </div>
         );
     }
@@ -63,8 +86,8 @@ PostPage.propTypes = {
     match: PropTypes.object
 };
 
-const mapStateToProps = (state, props) => {
-    console.log('mstp', state, props);
+const mapStateToProps = state => {
+    console.log('state', state);
     return state;
 };
 

@@ -30,7 +30,7 @@ export const Header = () => (
                 </li>
                 <li className="nav-item">
                     <div className="nav-link">
-                        <NavLink to='/random' activeClassName='menu selected'>Random</NavLink>
+                        <NavLink to='/rising' activeClassName='menu selected'>Rising</NavLink>
                     </div>
                 </li>
             </ul>

@@ -1,4 +1,4 @@
-import {POST_REQUEST, POST_SUCCESS, POST_ERROR} from '../actions/postActions';
+import { POST_REQUEST, POST_SUCCESS, POST_ERROR } from '../actions/postActions';
 
 const initialState = {
     isFetching: true,
@@ -6,7 +6,7 @@ const initialState = {
 };
 
 export const redditDev = (state = initialState, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case POST_REQUEST:
             return {
                 ...state,
@@ -15,9 +15,10 @@ export const redditDev = (state = initialState, action) => {
         case POST_SUCCESS:
             return {
                 isFetching: false,
-                posts: {...action.posts}
+                posts: { ...action.posts }
             };
         case POST_ERROR:
+            console.log('action error', action);
             return {
                 ...state,
                 isFetching: false,

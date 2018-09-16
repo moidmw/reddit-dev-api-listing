@@ -14,10 +14,13 @@ export const receivePost = (reddit, data) => ({
     posts: data
 });
 
-export const requestFailed = (error) => ({
-    type: POST_ERROR,
-    error: error.message
-});
+export const requestFailed = (error) => {
+    console.log('error', error.message);
+    return {
+        type: POST_ERROR,
+        error: error.message
+    };
+};
 
 export const fetchPost = (reddit, limit, after, type) => dispatch => {
     dispatch(requestPost(reddit));
