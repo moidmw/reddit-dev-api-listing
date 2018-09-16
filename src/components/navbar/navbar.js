@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 
 export const Header = () => (
-    <nav className="navbar navbar-expand-lg navbar-light alert-dark">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <a className="navbar-brand" href="/">
             <i className="fab fa-react fa-2x" style={{color: 'dodgerblue'}}></i>
         </a>

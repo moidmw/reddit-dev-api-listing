@@ -1,23 +1,23 @@
-import {POST_REQUEST, POST_SUCCESS, POST_ERROR} from '../actions/postActions';
+import {COMMENT_REQUEST, COMMENT_SUCCESS, COMMENT_ERROR} from '../actions/commentActions';
 
 const initialState = {
     isFetching: true,
-    posts: []
+    comments: []
 };
 
-export const redditDev = (state = initialState, action) => {
+export const commentReducer = (state = initialState, action) => {
     switch(action.type) {
-        case POST_REQUEST:
+        case COMMENT_REQUEST:
             return {
                 ...state,
                 isFetching: true
             };
-        case POST_SUCCESS:
+        case COMMENT_SUCCESS:
             return {
                 isFetching: false,
-                posts: {...action.posts}
+                comments: {...action.posts}
             };
-        case POST_ERROR:
+        case COMMENT_ERROR:
             return {
                 ...state,
                 isFetching: false,

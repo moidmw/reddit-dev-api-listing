@@ -4,5 +4,10 @@ import thunk from 'redux-thunk';
 import { AppReducer } from '../reducers/appReducer';
 
 export const createAppStore = () => {
-    return createStore(AppReducer, applyMiddleware(thunk));
+    return createStore(
+        AppReducer,
+        window.__REDUX_DEVTOOLS_EXTENSION__ &&
+            window.__REDUX_DEVTOOLS_EXTENSION__(),
+        applyMiddleware(thunk)
+    );
 };
