@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import moment from 'moment';
 
 const PostItem = props => {
+    console.log('{data}', props);
     let { data } = props;
     console.log('{data}', data);
 
@@ -19,7 +20,7 @@ const PostItem = props => {
     };
 
     return (
-        <div className="item-card ">
+        <div className={'item-card ' + props.className}>
             <Link
                 to={{ pathname: '/comments', state: { link: data.permalink } }}
                 className="post-title">
@@ -51,7 +52,8 @@ const PostItem = props => {
 
 PostItem.propTypes = {
     data: PropTypes.object,
-    onClick: PropTypes.func
+    onClick: PropTypes.func,
+    className: PropTypes.string
 };
 
 export default PostItem;

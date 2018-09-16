@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchComment } from '../../state/actions/commentActions';
-import CommentItem from './commentItem';
-import PostItem from './postItemBig';
+import CommentItem from './commentSection';
+import PostItem from '../post/postItem';
+import {LoadingIndicator} from '../../shared/LoadingIndicator/LoadingIndicator';
 
 class CommentsPage extends Component {
     componentDidMount = () => {
@@ -17,12 +18,15 @@ class CommentsPage extends Component {
         let { comments } = this.props;
         let { isFetching } = this.props.comments;
         return (
-            <div>
-                <PostItem post={comments.comments[0]} />
+            <div className="container">
                 {isFetching ? (
-                    <p>Loading</p>
-                ) : <CommentItem data={comments.comments[1]} />
-                }
+                    <LoadingIndicator/>
+                ) : (
+                    <div>
+                        <PostItem data={comments.comments[0].data.children[0].data} className={'fw-card'}/>
+                        <CommentItem data={comments.comments[1]} />
+                    </div>
+                )}
             </div>
         );
     }

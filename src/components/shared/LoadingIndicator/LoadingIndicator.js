@@ -1,28 +1,26 @@
-// IMPORT PACKAGE REFERENCES
-
 import React from 'react';
-import PropTypes from 'prop-types';
-
 
 // COMPONENT
 
-const LoadingIndicator = (props) => (
+const LoadingIndicator = () => (
     <div>
         {
-            props.busy &&
-            <div style={{ top: '50%', left: '50%', textAlign: 'center', color: 'dodgerblue', position: 'absolute', transform: 'translate(-50%, 0)' }}>
-                <i className="fa fa-spinner fa-spin fa-4x fa-fw"></i>
+            <div
+                style={{
+                    top: '50%',
+                    left: '50%',
+                    textAlign: 'center',
+                    color: '#FF4500',
+                    position: 'absolute',
+                    transform: 'translate(-50%, 0)'
+                }}>
+                <i className="fa fa-spinner fa-pulse fa-4x fa-fw" />
             </div>
         }
     </div>
 );
 
-
 // CONFIGURE COMPONENT PROP TYPES
-
-LoadingIndicator.propTypes = {
-    busy: PropTypes.bool
-};
 
 
 // EXPORT COMPONENT

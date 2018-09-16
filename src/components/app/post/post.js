@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { fetchPost } from '../../state/actions/postActions';
 import { fetchComment } from '../../state/actions/commentActions';
 import PostItem from './postItem';
+import {LoadingIndicator} from '../../shared/LoadingIndicator/LoadingIndicator';
 
 let limit = 10;
 let postType = 'hot';
@@ -36,7 +37,7 @@ class PostPage extends Component {
         return (
             <div className="container">
                 {isFetching ? (
-                    <h3 className="text-center mt-3" style={{color: '#9e9e9e'}}><i className="fas fa-spinner fa-pulse mr-2"></i>Loading</h3>
+                    <LoadingIndicator/>
                 ) : (
                     postArr.children.map((item, index) => (
                         <PostItem
