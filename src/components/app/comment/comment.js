@@ -12,10 +12,12 @@ class CommentsPage extends Component {
         const { dispatch } = this.props;
         dispatch(fetchComment(link));
     };
+    
 
     render() {
         let { comments } = this.props;
         let { isFetching } = this.props.comments;
+        console.log('comments', comments);
         return (
             <div className="container">
                 {isFetching ? (
@@ -37,7 +39,8 @@ CommentsPage.propTypes = {
     comments: PropTypes.object
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, props) => {
+    console.log('state, props', state, props);
     return state;
 };
 

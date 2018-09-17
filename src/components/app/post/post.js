@@ -19,6 +19,7 @@ class PostPage extends Component {
         const { dispatch } = this.props;
 
         if (props.match.url !== this.props.match.url) {
+            console.log('props posts', props);
             dispatch(fetchPost(props.match.params.type, limit));
         }
     };

@@ -15,22 +15,22 @@ export const Header = () => (
             <ul className="navbar-nav m-auto">
                 <li className="nav-item">
                     <div className="nav-link">
-                        <NavLink to='/hot' activeClassName='menu selected'  exact={true}>Hot</NavLink>
+                        <NavLink to='/post/hot' activeClassName='menu selected'  exact={true}>Hot</NavLink>
                     </div>
                 </li>
                 <li className="nav-item">
                     <div className="nav-link">
-                        <NavLink to='/new' activeClassName='menu selected'>New</NavLink>
+                        <NavLink to='/post/new' activeClassName='menu selected'>New</NavLink>
                     </div>
                 </li>
                 <li className="nav-item">
                     <div className="nav-link">
-                        <NavLink to='/top' activeClassName='menu selected'>Top</NavLink>
+                        <NavLink to='/post/top' activeClassName='menu selected'>Top</NavLink>
                     </div>
                 </li>
                 <li className="nav-item">
                     <div className="nav-link">
-                        <NavLink to='/rising' activeClassName='menu selected'>Rising</NavLink>
+                        <NavLink to='/post/rising' activeClassName='menu selected'>Rising</NavLink>
                     </div>
                 </li>
             </ul>
