@@ -18,7 +18,6 @@ export const redditDev = (state = initialState, action) => {
                 posts: { ...action.posts }
             };
         case POST_ERROR:
-            console.log('action error', action);
             return {
                 ...state,
                 isFetching: false,

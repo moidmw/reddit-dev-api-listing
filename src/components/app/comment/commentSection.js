@@ -33,8 +33,6 @@ const CommentSection = props => {
         return replies;
     };
     let comments = flatComments(data.children);
-    console.log(comments);
-    return (
         <div className="comment-section">
             {comments &&
                 comments.map((level, i) => {

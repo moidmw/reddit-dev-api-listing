@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 import moment from 'moment';
 
 const PostItem = props => {
-    console.log('{data}', props);
     let { data } = props;
-    console.log('{data}', data);
 
     const getImage = () => {
         if (data.preview) {

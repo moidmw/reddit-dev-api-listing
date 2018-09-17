@@ -14,7 +14,6 @@ class CommentsPage extends Component {
     };
 
     render() {
-        console.log('this', this);
         let { comments } = this.props;
         let { isFetching } = this.props.comments;
         return (
@@ -39,7 +38,6 @@ CommentsPage.propTypes = {
 };
 
 const mapStateToProps = (state, props) => {
-    console.log('comment mstp', state, props);
     return state;
 };
 

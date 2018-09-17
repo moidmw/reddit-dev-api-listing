@@ -19,7 +19,6 @@ class PostPage extends Component {
         const { dispatch } = this.props;
 
         if (props.match.url !== this.props.match.url) {
-            console.log('props.match.params.type', props.match.params.type);
             dispatch(fetchPost(props.match.params.type, limit));
         }
     };
@@ -87,7 +86,6 @@ PostPage.propTypes = {
 };
 
 const mapStateToProps = state => {
-    console.log('state', state);
     return state;
 };
 

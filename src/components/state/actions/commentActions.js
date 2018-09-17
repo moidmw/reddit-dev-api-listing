@@ -4,7 +4,6 @@ export const COMMENT_ERROR = 'COMMENT_ERROR';
 import axios from 'axios';
 
 export const requestPost = (reddit) => {
-    console.log('on request', reddit);
     return {
         type: COMMENT_REQUEST,
         reddit
@@ -12,7 +11,6 @@ export const requestPost = (reddit) => {
 };
 
 export const receivePost = (reddit, data) => {
-    console.log('on success', reddit, data);
     return {
         type: COMMENT_SUCCESS,
         reddit,
@@ -21,7 +19,6 @@ export const receivePost = (reddit, data) => {
 };
 
 export const requestFailed = (error) => {
-    console.log('on fail', error.message);
     return {
         type: COMMENT_ERROR,
         error: error.message
@@ -29,7 +26,6 @@ export const requestFailed = (error) => {
 };
 
 export const fetchComment = (permalink) => dispatch => {
-    console.log('on fetch', permalink);
     dispatch(requestPost(permalink));
     let url = `https://www.reddit.com${permalink.substring(0, permalink.length - 1)}.json`;
     
