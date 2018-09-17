@@ -33,26 +33,23 @@ const CommentSection = props => {
         return replies;
     };
     let comments = flatComments(data.children);
-        <div className="comment-section">
-            {comments &&
-                comments.map((level, i) => {
-                    return (
-                        <div key={i} className="comment-block">
-                            {level.map(cmt => {
-                                return <CommentItem key={cmt.id} cmt={cmt} />;
-                            })}
-                        </div>
-                    );
-                })}
-        </div>
-    );
+    <div className="comment-section">
+        {comments &&
+            comments.map((level, i) => {
+                return (
+                    <div key={i} className="comment-block">
+                        {level.map(cmt => {
+                            return <CommentItem key={cmt.id} cmt={cmt} />;
+                        })}
+                    </div>
+                );
+            })}
+    </div>;
 };
-
-
 
 CommentSection.propTypes = {
     location: PropTypes.object,
-    data: PropTypes.object,
+    data: PropTypes.object
 };
 
 export default CommentSection;

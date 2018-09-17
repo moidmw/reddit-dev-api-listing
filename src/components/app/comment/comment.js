@@ -37,7 +37,7 @@ CommentsPage.propTypes = {
     comments: PropTypes.object
 };
 
-const mapStateToProps = (state, props) => {
+const mapStateToProps = (state) => {
     return state;
 };
 
