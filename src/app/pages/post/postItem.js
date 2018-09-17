@@ -18,7 +18,7 @@ const PostItem = props => {
     };
 
     return (
-        <div className={'item-card ' + props.className}>
+        <div className={'item-card ' + (props.className || '')}>
             <Link
                 to={{ pathname: '/comments', state: { link: data.permalink } }}
                 className="post-title">
@@ -40,9 +40,13 @@ const PostItem = props => {
                     <i className="fas fa-angle-up" />
                     {data.ups - data.downs}
                 </span>
-                <span className="post-comment post-info">
+                <Link className="post-comment post-info"
+                    to={{
+                        pathname: '/comments',
+                        state: { link: data.permalink }
+                    }}>
                     <i className="fas fa-comment" /> {data.num_comments}
-                </span>
+                </Link>
             </div>
         </div>
     );

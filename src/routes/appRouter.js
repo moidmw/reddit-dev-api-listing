@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import { Header } from '../navbar/navbar';
+import { Header } from '../app/navbar/navbar';
 
-import CommentsPage from '../app/comment/comment';
-import NotFound from '../shared/404/404';
-import PostIndex from '../app/post/postIndex';
+import CommentsPage from '../app/pages/comment/commentPage';
+import NotFound from '../app/shared/404/404';
+import PostIndex from '../app/pages/post/postIndex';
 
 export const AppRouter = () => (
     <BrowserRouter>

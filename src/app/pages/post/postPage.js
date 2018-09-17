@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchPost } from '../../state/actions/postActions';
-import { fetchComment } from '../../state/actions/commentActions';
+import { fetchPost } from '../../../actions/postActions';
+import { fetchComment } from '../../../actions/commentActions';
 import PostItem from './postItem';
 import { LoadingIndicator } from '../../shared/LoadingIndicator/LoadingIndicator';
 
@@ -60,18 +60,36 @@ class PostPage extends Component {
                         />
                     ))
                 )}
-                <div style={{display: (isFetching || redditDev.error) ? 'none': 'block'}}>
-                    <div
-                        title="Previous"
-                        onClick={this.fetchMorePost.bind(this, 'before')}
-                        className="previous-btn post-navigate">
-                        <span className="left-chev cheveron" />
+                <div
+                    style={{
+                        display:
+                            isFetching || redditDev.error ? 'none' : 'block'
+                    }}>
+                    <div className="d-sm-none d-none d-md-block">
+                        <div
+                            title="Previous"
+                            onClick={this.fetchMorePost.bind(this, 'before')}
+                            className="previous-btn post-navigate">
+                            <span className="left-chev cheveron" />
+                        </div>
+                        <div
+                            title="Next"
+                            onClick={this.fetchMorePost.bind(this, 'after')}
+                            className="next-btn post-navigate">
+                            <span className="right-chev cheveron" />
+                        </div>
                     </div>
-                    <div
-                        title="Next"
-                        onClick={this.fetchMorePost.bind(this, 'after')}
-                        className="next-btn post-navigate">
-                        <span className="right-chev cheveron" />
+                    <div className="d-block d-sm-block d-md-none mb-3">
+                        <button
+                            className="btn btn-reddit-primary"
+                            onClick={this.fetchMorePost.bind(this, 'before')}>
+                            Previous
+                        </button>
+                        <button
+                            className="btn btn-reddit-primary float-right"
+                            onClick={this.fetchMorePost.bind(this, 'after')}>
+                            Next
+                        </button>
                     </div>
                 </div>
             </div>

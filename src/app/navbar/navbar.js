@@ -1,12 +1,12 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 
 export const Header = () => (
     <nav className="navbar navbar-expand-lg navbar-light">
-        <a className="navbar-brand" href="/">
+        <Link className="navbar-brand" to="/post/hot">
             <i className="fab fa-reddit-alien fa-2x" style={{color: '#FF4500'}}></i>
-        </a>
+        </Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu">
             <span className="navbar-toggler-icon"></span>
         </button>

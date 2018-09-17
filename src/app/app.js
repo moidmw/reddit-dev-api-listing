@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { createAppStore } from './state/stores/appStore';
-import { AppRouter } from './routers/appRouter';
+import { createAppStore } from '../store/appStore';
+import { AppRouter } from '../routes/appRouter';
 
 // COMPONENT
 

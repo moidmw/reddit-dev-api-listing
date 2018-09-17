@@ -1,27 +1,16 @@
 body {
     background-color: #f8f9fa;
     font-family: $font-family;
-    font-weight: 300;
 }
 
-.animated {
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
- }
+.btn.btn-reddit-primary{
+    padding: 10px 40px;
+    font-weight: 600;
+    color: #fff;
+    background: #FF4500;
+}
 
-@keyframes fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
- }
-
- .fadeIn {
-    -webkit-animation-name: fadeIn;
-    animation-name: fadeIn;
- }
-
- .navbar {
-     border-bottom: 4px solid $reddit-secondary; 
-     background: #fff;
- }
+.navbar {
+    border-bottom: 4px solid $reddit-secondary;
+    background: #fff;
+}

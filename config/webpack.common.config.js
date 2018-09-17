@@ -11,6 +11,9 @@ const config = {
         path: commonPaths.outputPath,
         publicPath: '/'
     },
+    devServer: {
+        historyApiFallback: true,
+    },
     module: {
         rules: [
             {

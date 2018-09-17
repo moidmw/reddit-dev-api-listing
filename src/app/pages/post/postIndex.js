@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Route} from 'react-router';
-import PostPage from './post';
+import PostPage from './postPage';
 
 class postIndex extends Component {
     render() {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchComment } from '../../state/actions/commentActions';
+import { fetchComment } from '../../../actions/commentActions';
 import CommentItem from './commentSection';
 import PostItem from '../post/postItem';
 import {LoadingIndicator} from '../../shared/LoadingIndicator/LoadingIndicator';
