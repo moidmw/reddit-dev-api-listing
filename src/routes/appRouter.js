@@ -4,15 +4,15 @@ import { Header } from '../app/navbar/navbar';
 
 import CommentsPage from '../app/pages/comment/commentPage';
 import NotFound from '../app/shared/404/404';
-import PostIndex from '../app/pages/post/postIndex';
+import PostIndex from '../app/pages/post/post';
 
 export const AppRouter = () => (
     <BrowserRouter>
         <Fragment>
-            <Header />            
+            <Header />
             <Switch>
-                <Route path='/post' component={PostIndex} />
-                <Route path='/comments' component={CommentsPage} exact={true} />
+                <Route path="/post" component={PostIndex} />
+                <Route path="/comments" component={CommentsPage} exact={true} />
                 <Redirect to="/post/hot" from="/" />
                 <Route to="/error" component={NotFound} />
             </Switch>

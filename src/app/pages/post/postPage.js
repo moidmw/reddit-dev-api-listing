@@ -8,7 +8,7 @@ import { LoadingIndicator } from '../../shared/LoadingIndicator/LoadingIndicator
 
 let limit = 10;
 
-class PostPage extends Component {
+export class PostPage extends Component {
     componentDidMount = () => {
         const { dispatch } = this.props;
         const { params } = this.props.match;

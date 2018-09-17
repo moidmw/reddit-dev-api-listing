@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Route} from 'react-router';
 import PostPage from './postPage';
 
-class postIndex extends Component {
+class PostWrapper extends Component {
     render() {
         console.log('PostPage', this.props);
         return (
@@ -13,4 +13,4 @@ class postIndex extends Component {
     }
 }
 
-export default postIndex;
+export default PostWrapper;
